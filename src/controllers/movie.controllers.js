@@ -55,7 +55,7 @@ const setMovieDirectors= catchError(async(req,res)=>{
     const {id}=req.params;
     const movie=await Movie.findByPk(id)
     await movie.setDirectors(req.body);
-    const directors=await movie.getActors()
+    const directors=await movie.getDirectors()
     return res.json(directors)
 });
 
